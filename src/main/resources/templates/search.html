@@ -6,7 +6,7 @@
 
 <div th:replace="fragments :: page-header"></div>
 
-<div class="container body-content">
+<td class="container body-content">
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
@@ -35,9 +35,18 @@
     </form>
 
     <hr />
+    <p>
+            <tr th:each="job : ${jobs}">
+                <td>
+    <p th:text="'ID : '+${job.id}"></p>
+    <p th:text="'Name: ' + ${job.name}"></p>
+    <p th:text="'Location: ' + ${job.location}"></p>
+    <p th:text="'Position Type :'+ ${job.positionType}"></p>
+    <p th:text="'Skill: '+ ${job.coreCompetency}"></p>
+    </td>
 
-    <!-- TODO #4 - Loop over the search results to display all job fields. -->
-
+    </p>
+    <!--<div th:replace="fragments :: table-jobs"></div>-->
 </div>
 
 </body>
